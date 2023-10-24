@@ -1,22 +1,24 @@
 package pizzapp;
 
 public class PizzApp extends javax.swing.JFrame {
+    
+    double meretszorzo = 1;
+    double vegsoar;
+    int alapar = -1; //-1 jelentése nincs ára a pizzának
+    int db = 1;
+    int sajt = 0;
+    int hagyma = 0;
+    int ananasz = 0;
+    int extrak;
 
     public PizzApp() {
         initComponents();
-        int alapar = 1750;
-        double meretSzorzo = 1;
-        int db = 1;
-        int sajt = 0;
-        int hagyma = 0;
-        int ananasz = 0;
-        int extrak = hagyma + sajt + ananasz;
         
+        extrak = hagyma + sajt + ananasz;
         
+        meretszorzo = 1;
         
-        
-        
-        double vegsoar = alapar * meretSzorzo + extrak;
+        vegsoar = alapar * meretszorzo + extrak;
         vegsoar *= db; // vegsoar = vegsoar * db
         lblAr.setText(vegsoar + "");
     }
@@ -66,10 +68,20 @@ public class PizzApp extends javax.swing.JFrame {
 
         buttonGroup1.add(rdbMeret25);
         rdbMeret25.setText("25 cm");
+        rdbMeret25.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbMeret25ItemStateChanged(evt);
+            }
+        });
 
         buttonGroup1.add(rdbMeret32);
         rdbMeret32.setSelected(true);
         rdbMeret32.setText("32 cm");
+        rdbMeret32.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rdbMeret32ItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMeretLayout = new javax.swing.GroupLayout(pnlMeret);
         pnlMeret.setLayout(pnlMeretLayout);
@@ -235,8 +247,8 @@ public class PizzApp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdValaszthatoPizzakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdValaszthatoPizzakActionPerformed
-        int alapar = -1; //-1 jelentése nincs ára a pizzának
         int index = cmdValaszthatoPizzak.getSelectedIndex();
+        
         
         if (index == 0) {
             alapar = 1580;
@@ -250,20 +262,34 @@ public class PizzApp extends javax.swing.JFrame {
                 
         
         
-        double meretSzorzo = 1;
-        int db = 1;
-        int sajt = 0;
-        int hagyma = 0;
-        int ananasz = 0;
-        int extrak = hagyma + sajt + ananasz;
+        meretszorzo = 1;
+        db = 1;
+        sajt = 0;
+        hagyma = 0;
+        ananasz = 0;
+        extrak = hagyma + sajt + ananasz;
         
         
         
         
-        double vegsoar = alapar * meretSzorzo + extrak;
+        vegsoar = alapar * meretszorzo + extrak;
         vegsoar *= db; // vegsoar = vegsoar * db
         lblAr.setText(vegsoar + "");
     }//GEN-LAST:event_cmdValaszthatoPizzakActionPerformed
+
+    private void rdbMeret32ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret32ItemStateChanged
+        meretszorzo = .75;
+        vegsoar = alapar * meretszorzo + extrak;
+        vegsoar *= db; // vegsoar = vegsoar * db
+        lblAr.setText(vegsoar + "");
+    }//GEN-LAST:event_rdbMeret32ItemStateChanged
+
+    private void rdbMeret25ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rdbMeret25ItemStateChanged
+        meretszorzo = 1;
+        vegsoar = alapar * meretszorzo + extrak;
+        vegsoar *= db; // vegsoar = vegsoar * db
+        lblAr.setText(vegsoar + "");
+    }//GEN-LAST:event_rdbMeret25ItemStateChanged
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
