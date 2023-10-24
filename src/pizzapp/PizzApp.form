@@ -179,6 +179,7 @@
           </Properties>
           <Events>
             <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rdbMeret32ItemStateChanged"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdbMeret32ActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -254,6 +255,9 @@
               <SpinnerModel initial="1" maximum="5" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="numDbStateChanged"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -298,16 +302,27 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="sajt"/>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="chbSajtItemStateChanged"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbSajtActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="chbHagyma">
           <Properties>
             <Property name="text" type="java.lang.String" value="hagyma"/>
           </Properties>
+          <Events>
+            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="chbHagymaStateChanged"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="chbHagymaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="chbAnanasz">
           <Properties>
             <Property name="text" type="java.lang.String" value="anan&#xe1;sz"/>
           </Properties>
+          <Events>
+            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="chbAnanaszStateChanged"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
