@@ -284,13 +284,13 @@ public class PizzApp extends javax.swing.JFrame {
         
         
         if (index == 0) {
-            alapar = 1580;
+            alapar = 1570;
         } else if(index == 1) {
-            alapar = 1680;
+            alapar = 1670;
         } else if(index == 2) {
-            alapar = 1780;
+            alapar = 1770;
         } else if (index == 3) {
-            alapar = 1950;
+            alapar = 1940;
         }
         extrak = hagyma + sajt + ananasz;
         szamolasEsKiiras();
